@@ -1,10 +1,15 @@
 import React from 'react';
 import {SafeAreaView, View, Text} from 'react-native';
 import styled from 'styled-components';
+import {Button} from '../../components';
 
 const Container = styled(SafeAreaView)`
   flex: 1;
   align-items: center;
+`;
+
+const ContentWrapper = styled(View)`
+  padding: 20px;
 `;
 
 const HyperLinkWrapper = styled(View)`
@@ -39,7 +44,11 @@ export default function LoginScreen() {
         <StyledText>Already have an account? </StyledText>
         <HyperLink>Sign in</HyperLink>
       </HyperLinkWrapper>
-      <Heading>Sign Up</Heading>
+
+      <ContentWrapper>
+        <Heading>Sign Up</Heading>
+        <Button onPress={() => {}}>Sign Up</Button>
+      </ContentWrapper>
     </Container>
   );
 }
