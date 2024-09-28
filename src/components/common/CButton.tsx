@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import {View, Pressable, Text, Animated} from 'react-native';
 
 const ButtonContainer = styled(View)`
-  width: ${props => props.theme.utils.pxToWp(300)}px;
-  height: ${props => props.theme.utils.pxToHp(50)}px;
+  height: ${props => props.theme.buttonHeight}px;
+  width: 100%;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -14,9 +14,9 @@ const ButtonContainer = styled(View)`
 `;
 
 const ButtonText = styled(Text)`
-  font-size: 16px;
+  font-size: ${props => props.theme.fonts.size.large}px;
+  font-family: ${props => props.theme.fonts.families.semibold};
   line-height: 16px;
-  font-weight: 700;
   text-align: center;
   color: ${props => props.theme.colors.white};
 `;

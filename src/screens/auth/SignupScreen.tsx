@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, View, Text} from 'react-native';
 import styled from 'styled-components';
-import {Button} from '../../components';
+import {CButton} from '../../components';
 
 const Container = styled(SafeAreaView)`
   flex: 1;
@@ -47,7 +47,7 @@ export default function LoginScreen() {
 
       <ContentWrapper>
         <Heading>Sign Up</Heading>
-        <Button onPress={() => {}}>Sign Up</Button>
+        <CButton onPress={() => {}}>Continue</CButton>
       </ContentWrapper>
     </Container>
   );

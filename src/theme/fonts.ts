@@ -8,6 +8,19 @@ export const size = {
   title: 40,
 };
 
+export const families = {
+  regular: 'DMSans-Regular',
+  medium: 'DMSans-Medium',
+  bold: 'DMSans-Bold',
+  thin: 'DMSans-Thin',
+  semibold: 'DMSans-SemiBold',
+  extrabold: 'DMSans-ExtraBold',
+  light: 'DMSans-Light',
+  extralight: 'DMSans-ExtraLight',
+  black: 'DMSans-Black',
+};
+
 export default {
   size,
+  families,
 };

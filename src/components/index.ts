@@ -1,2 +1,2 @@
 // File for components export
-export {default as Button} from './common/Button';
+export {default as CButton} from './common/CButton';
