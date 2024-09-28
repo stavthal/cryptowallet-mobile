@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import styled from 'styled-components';
-import {View, Pressable, Text} from 'react-native';
+import {View, Pressable, Text, Animated} from 'react-native';
 
 const ButtonContainer = styled(View)`
   width: ${props => props.theme.utils.pxToWp(300)}px;
@@ -27,11 +27,30 @@ interface ButtonProps {
 }
 
 export default function Button({onPress, children}: ButtonProps) {
+  const animated = useRef(new Animated.Value(1)).current;
+
+  const fadeIn = () => {
+    Animated.timing(animated, {
+      toValue: 0.5,
+      duration: 100,
+      useNativeDriver: true,
+    }).start();
+  };
+  const fadeOut = () => {
+    Animated.timing(animated, {
+      toValue: 1,
+      duration: 200,
+      useNativeDriver: true,
+    }).start();
+  };
+
   return (
-    <Pressable onPress={onPress}>
-      <ButtonContainer>
-        <ButtonText>{children}</ButtonText>
-      </ButtonContainer>
+    <Pressable onPressIn={fadeIn} onPressOut={fadeOut} onPress={onPress}>
+      <Animated.View style={{opacity: animated}}>
+        <ButtonContainer>
+          <ButtonText>{children}</ButtonText>
+        </ButtonContainer>
+      </Animated.View>
     </Pressable>
   );
 }
